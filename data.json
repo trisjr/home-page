@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "John Doe | Software Engineer",
+    "description": "Portfolio of John Doe, a passionate Software Engineer specializing in full-stack development."
+  },
+  "hero": {
+    "name": "John Doe",
+    "role": "Full Stack Developer",
+    "tagline": "Building scalable solutions with clean code and modern architecture.",
+    "avatar": "https://placehold.co/400x400/2563eb/ffffff?text=JD",
+    "buttons": [
+      {
+        "text": "Contact Me",
+        "link": "#contact",
+        "primary": true
+      },
+      {
+        "text": "GitHub",
+        "link": "https://github.com",
+        "primary": false,
+        "icon": "fab fa-github"
+      },
+      {
+        "text": "Download CV",
+        "link": "#",
+        "primary": false,
+        "icon": "fas fa-download"
+      }
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a passionate software engineer with 5+ years of experience in building high-quality web applications. I love solving complex problems and optimizing performance. When I'm not coding, you can find me hiking or reading tech blogs.",
+    "stats": [
+      { "label": "Years Experience", "value": "5+" },
+      { "label": "Projects Completed", "value": "20+" },
+      { "label": "Coffee Consumed", "value": "∞" }
+    ]
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "categories": [
+      {
+        "name": "Frontend",
+        "items": ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "Tailwind CSS"]
+      },
+      {
+        "name": "Backend",
+        "items": ["Node.js", "Python", "PostgreSQL", "MongoDB", "Redis"]
+      },
+      {
+        "name": "Tools & DevOps",
+        "items": ["Git", "Docker", "AWS", "CI/CD", "Linux"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "items": [
+      {
+        "title": "E-Commerce Platform",
+        "description": "A fully functional e-commerce platform built with MERN stack, featuring user authentication, payment processing, and admin dashboard.",
+        "tags": ["React", "Node.js", "MongoDB", "Stripe"],
+        "github": "https://github.com",
+        "demo": "https://example.com"
+      },
+      {
+        "title": "Task Management App",
+        "description": "A collaborative task management tool with real-time updates using WebSockets and a drag-and-drop interface.",
+        "tags": ["Vue.js", "Firebase", "Tailwind CSS"],
+        "github": "https://github.com",
+        "demo": null
+      },
+      {
+        "title": "Weather Dashboard",
+        "description": "A weather forecasting application that visualizes data from multiple APIs using D3.js.",
+        "tags": ["JavaScript", "D3.js", "OpenWeatherAPI"],
+        "github": "https://github.com",
+        "demo": "https://example.com"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Work Experience",
+    "items": [
+      {
+        "company": "Tech Solutions Inc.",
+        "role": "Senior Frontend Developer",
+        "date": "2021 - Present",
+        "description": [
+          "Led a team of 5 developers in rebuilding the core product dashboard.",
+          "Improved site performance by 40% through code splitting and lazy loading.",
+          "Implemented comprehensive testing using Jest and Cypress."
+        ]
+      },
+      {
+        "company": "Creative Agency",
+        "role": "Web Developer",
+        "date": "2018 - 2021",
+        "description": [
+          "Developed responsive websites for over 30 clients.",
+          "Collaborated with designers to ensure pixel-perfect implementation.",
+          "Managed server deployment and maintenance."
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "message": "I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+    "email": "hello@johndoe.com",
+    "social": [
+      { "platform": "GitHub", "link": "https://github.com", "icon": "fab fa-github" },
+      { "platform": "LinkedIn", "link": "https://linkedin.com", "icon": "fab fa-linkedin" },
+      { "platform": "Twitter", "link": "https://twitter.com", "icon": "fab fa-twitter" }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2024 John Doe. All rights reserved."
+  }
+}
