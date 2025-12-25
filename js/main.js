@@ -44,6 +44,15 @@ async function fetchData() {
         if (!response.ok) throw new Error('Failed to load data');
         const data = await response.json();
 
+        // Check for GitHub Username and fetch data if available
+        if (data.githubUsername && data.githubUsername !== "yourusername") {
+            try {
+                await fetchGitHubData(data.githubUsername, data);
+            } catch (ghError) {
+                console.warn("GitHub API failed or rate limited, using local fallback:", ghError);
+            }
+        }
+
         renderMeta(data.meta);
         renderHero(data.hero);
         renderAbout(data.about);
@@ -55,6 +64,54 @@ async function fetchData() {
     } catch (error) {
         console.error('Error loading content:', error);
         document.body.innerHTML = '<div class="text-center p-10 text-red-500">Error loading content. Please check the console.</div>';
+    }
+}
+
+async function fetchGitHubData(username, data) {
+    const headers = { 'Accept': 'application/vnd.github.v3+json' };
+
+    // 1. Fetch Profile
+    const profileRes = await fetch(`https://api.github.com/users/${username}`, { headers });
+    if (profileRes.ok) {
+        const profile = await profileRes.json();
+
+        // Update Hero Section
+        data.hero.name = profile.name || data.hero.name;
+        data.hero.avatar = profile.avatar_url || data.hero.avatar;
+        data.hero.tagline = profile.bio || data.hero.tagline; // GitHub Bio as Tagline
+
+        // Update Social Link for GitHub
+        const githubLink = data.contact.social.find(s => s.platform === 'GitHub');
+        if (githubLink) {
+            githubLink.link = profile.html_url;
+        }
+
+        // Update Button Link for GitHub
+        const githubBtn = data.hero.buttons.find(b => b.text.includes('GitHub'));
+        if (githubBtn) {
+            githubBtn.link = profile.html_url;
+        }
+    }
+
+    // 2. Fetch Repositories
+    // Sort by updated to show latest work, or stars.
+    // Using 'updated' implies recent activity which is good for portfolio.
+    const reposRes = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6&type=owner`, { headers });
+
+    if (reposRes.ok) {
+        const repos = await reposRes.json();
+
+        // Filter out forks if desired, but for now we keep them or we can filter in the API call.
+        // We will map these to the project structure.
+        if (repos.length > 0) {
+            data.projects.items = repos.map(repo => ({
+                title: repo.name,
+                description: repo.description || "No description provided.",
+                tags: [repo.language].filter(Boolean), // GitHub only gives one primary language easily
+                github: repo.html_url,
+                demo: repo.homepage || null
+            }));
+        }
     }
 }
 

@@ -6,7 +6,8 @@ A clean, modern, and completely customizable personal portfolio website template
 
 *   **Clean & Modern Design:** Minimalist UI with a developer-focused aesthetic.
 *   **Dark Mode Support:** Built-in light/dark theme toggle that respects system preferences.
-*   **Data-Driven Content:** All content is managed via a single `data.json` file – no need to dig through HTML code to update your info.
+*   **Data-Driven Content:** All content is managed via a single `data.json` file.
+*   **GitHub Integration:** Automatically fetch your profile picture, bio, and latest projects from GitHub.
 *   **Fully Responsive:** Looks great on mobile, tablet, and desktop.
 *   **No Frameworks:** Pure HTML/JS/CSS. No build steps, node_modules, or complex setups required.
 *   **GitHub Pages Ready:** Deploy in seconds.
@@ -42,11 +43,12 @@ A clean, modern, and completely customizable personal portfolio website template
 
 2.  **Edit Content:**
     *   Open `data.json`.
-    *   Replace the placeholder text with your own details (Name, Bio, Skills, Projects, etc.).
-    *   Links to images can be external URLs or local paths relative to the root (e.g., `assets/images/my-photo.jpg`).
+    *   **GitHub Integration:** Set `"githubUsername": "your_actual_username"` to automatically pull your Avatar, Bio, and Projects.
+    *   **Manual Control:** If you prefer to enter data manually, set `githubUsername` to `null` or a dummy value, and fill out the fields in `data.json`.
+    *   Replace other placeholder text with your own details (Experience, Skills, Contact).
 
 3.  **Add Images:**
-    *   Place your profile picture in `assets/images/`.
+    *   Place your profile picture in `assets/images/` (if not using GitHub avatar).
     *   Update the `avatar` field in `data.json` to point to your file.
 
 4.  **Modify Styles (Optional):**
