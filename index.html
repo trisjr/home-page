@@ -1,1 +1,70 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/home-page/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/home-page/logo192.png"/><link rel="manifest" href="/home-page/manifest.json"/><title>React App</title><script defer="defer" src="/home-page/static/js/main.c5bbc1b5.js"></script><link href="/home-page/static/css/main.7413cbdf.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio">
+    <title>Portfolio</title>
+
+    <!-- Favicon Placeholder -->
+    <link rel="icon" href="assets/icons/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="antialiased selection:bg-blue-200 dark:selection:bg-blue-900">
+
+    <!-- Navbar / Theme Toggle -->
+    <nav class="fixed top-0 right-0 p-6 z-50">
+        <button id="theme-toggle" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-yellow-400 hover:bg-gray-100 dark:hover:bg-gray-700 p-3 rounded-full shadow-lg transition-all transform hover:scale-110 focus:outline-none" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon text-xl"></i>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 transition-colors duration-300"></section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-white dark:bg-gray-900 transition-colors duration-300"></section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="bg-gray-50 dark:bg-gray-800 transition-colors duration-300"></section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="bg-white dark:bg-gray-900 transition-colors duration-300"></section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="bg-gray-50 dark:bg-gray-800 transition-colors duration-300"></section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white dark:bg-gray-900 transition-colors duration-300"></section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300"></footer>
+
+    <!-- Main Logic -->
+    <script src="js/main.js"></script>
+</body>
+</html>
